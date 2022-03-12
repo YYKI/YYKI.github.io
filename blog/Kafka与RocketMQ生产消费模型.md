@@ -1,14 +1,17 @@
 # Kafka与RocketMQ生产消费模型
-## 架构图对比
+## 架构图
 ### Kafka
-zookeeper
+基本概念：producer, consumer, consumerGroup, topic, message, broker, partition(leader, follower), zookeeper(kafka3不再依赖zookeeper)
+![图片](https://user-images.githubusercontent.com/24954102/158013057-7d0ceaa9-708b-46f3-a248-0ada0a527de6.png)
 
 ### RocketMQ
-nameserver
+基本概念：producer, consumer, consumerGroup, topic, message, broker(leader, follower), queue, commitLog, nameServer
+![图片](https://user-images.githubusercontent.com/24954102/158013831-310acc92-fde5-4a80-aca8-1fa83551c6c3.png)
 
-## 生产对比
 
-## 消费对比
+## 生产
 
-## 消息存储对比
+## 消费
+
+## 消息存储
 
