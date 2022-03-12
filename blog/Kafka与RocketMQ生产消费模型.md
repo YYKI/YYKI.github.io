@@ -10,8 +10,24 @@
 
 
 ## 生产
+### Kafka
+分区（partition）选择
+- 轮询策略
+- 随机策略
+- key-ordering策略(xiao)
+消息批量压缩后发送(节省网络传输资源占用)
+### RocketMQ
+队列（queue）选择
+- 轮询
+- 自定义：MessageQueueSelector
+支持延时消息
+消息单条压缩发送(批量消息存在gc问题)
 
 ## 消费
 
 ## 消息存储
+
+## 参考
+https://rocketmq.apache.org/
+https://www.cnblogs.com/pyng/p/13392216.html
 
