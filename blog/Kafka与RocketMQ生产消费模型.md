@@ -54,8 +54,17 @@ RocketMQ采用推模式（实际为长轮询，broker无消息时，请求hold�
 
 
 ## 消息存储
+零拷贝，顺序写，pageCache
+### Kafka
+Partition在服务器上的表现形式就是一个一个的文件夹，每个partition的文件夹下面会有多组segment文件，每组segment文件又包含.index文件、.log文件、.timeindex文件（早期版本中没有）三个文件， log文件就实际是存储message的地方，而index和timeindex文件为索引文件，用于检索消息。
+
+### RocketMQ
+RocketMQ的消息存储由CommitLog（同一broker下所有topic共享，一个文件1G）和ConsumeQueue（每个队列独立文件，在topic目录下）两部分组成，其中CommitLog用于存储原始的消息，而ConsumeQueue用于存储投递到某一个queue中的消息的位置信息
 
 ## 参考
 https://rocketmq.apache.org/
+
 https://www.cnblogs.com/pyng/p/13392216.html
+
+https://zhuanlan.zhihu.com/p/92125985
 
